@@ -1,0 +1,162 @@
+[
+    {
+        "text": "Do\u2019s and don\u2019t\u2019s \u2022Tobeeligible for attendance, you must respond clearly when your name iscalled .Requests forlater updates will not beconsidered . \u2022During class, washroom and drinking water requests are not permitted . \u2022Active participation in class discussions on the subject is encouraged when prompted . \u2022Ensure you come prepared forthe lab asper the guidelines provided inthe lab manual . \u2022Maintaining a200 -page observation record book ismandatory . \u2022Take comprehensive notes during theory classes .",
+        "page": 1
+    },
+    {
+        "text": "Chapter 1 Java Programming Fundamentals Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 2
+    },
+    {
+        "text": "Object -Oriented Programming or OOPs \u2022As the name suggests, Object -Oriented Programming or OOPs refers to languages that use objects in programming . \u2022Object -oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc in programming . \u2022The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function . \u2022Ex: Java, C++, Python, C#. Ruby, etc.",
+        "page": 3
+    },
+    {
+        "text": "The Origins of Java \u2022Java is a high -level language conceived by James Gosling in 1991. \u2022Initially called \u201cOak\u201d, but was renamed \u201cJava\u201d in 1995. \u2022Java syntax is similar to the older languages C & C++. \u2022It was not designed to replace C++. \u2022Original motivation \u2013 need for a platform -independent language for creating s/w to be embedded in various consumer electronic devices / Internet \u2022The newest version is Java Platform, Standard Edition 23 (Java SE 23). Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 4
+    },
+    {
+        "text": "Progress Check \u2022Java is useful for the Internet because it can be used to produce ______ programs \u2022Java is the direct descendant of what languages?",
+        "page": 5
+    },
+    {
+        "text": "Java Buzzwords \u25aaSimple \u25aaeasy to learn, inherits c/ c++ syntax, left out difficult constructs like pointers, memory management. \u25aaPure Object oriented Language - \u25aaclasses and objects \u25aaJava is case sensitive language - \u25aa variable val is different from Val, VAL, VaL \u25aaRobust - \u25aaAbility to create robust, reliable programs \u2022 Exception handling \u2022 Strictly typed language ( checks for errors at both compile and run time) \u2022 Easy memory management ( automatic deallocation -garbage collection)",
+        "page": 6
+    },
+    {
+        "text": "Java Buzzwords \u25aa Multi threaded \u25aawrite programs that do many things simultaneously \u25aaArchitecture neutral \u25aacompiled java programs will run on variety of processors using various OSs (The goal - \u201c Write once, run any where, any time, forever\u201d) \u25aaBoth compiled and interpreted \u25aaenables creation of cross -platform programs",
+        "page": 7
+    },
+    {
+        "text": "Java Buzzwords \u25aaDynamic \u25aaResolves type information at run time \u25aaDistributed \u25aaDesigned for distributed environment of internet because it handles TCP/IP protocol, RMI \u25aaSecurity \u25aaExecution is confined to JVM",
+        "page": 8
+    },
+    {
+        "text": "Java and Internet \u25fcJava can be used to create two types of programs : applications and applets \u25fcAn application is a program \u25fcthat runs on your computer, under the operating system of that computer \u25fcAn applet is a tiny Java program \u25fcdesigned to be transmitted over the Internet \u25fcautomatically downloaded across the network, just like an image, sound file, or video clip \u25fcexecuted by a Java -compatible Web browser",
+        "page": 9
+    },
+    {
+        "text": "\u2022Applets \u2022Allow some functionality to be moved from server to client like \u2022 display data provided by the server \u2022 handle user inputs \u2022 provide simple functions ( loan calculator) that execute locally rather than on server \u2022Challenges: Introduces security and portability issuesApplets",
+        "page": 10
+    },
+    {
+        "text": "SECURITY \u25fcAutomatic downloading of applets might contain virus \u25fcmalicious code gains unauthorized access to system resources, passwords, credit card numbers etc. \u25fcBut, when a Java -compatible Web browser used, \u25fcOne can safely download Java applets without fear of viral infection or malicious intent \u25fcJava achieves this protection \u25fcby confining a Java program to the Java execution environment and \u25fcnot allowing access to other parts of the computer environment",
+        "page": 11
+    },
+    {
+        "text": "Portability \u2022Portability is the major aspect of Internet \u2022because many different types of computers and OSs are connected to it. \u2022In case of applets, \u2022must be able to downloaded and must be executed by wide variety of computes and OSs. \u2022Because Java is architecture neutral, \u2022Java programs are portable. \u2022They can be run on any platform without being recompiled .",
+        "page": 12
+    },
+    {
+        "text": "Java\u2019s solution: \u27a2Execution of bytecode by JVM \u27a2is the easiest way to create portable programs by implementing java interpreter for each platform.",
+        "page": 13
+    },
+    {
+        "text": "Java bytecode \u25fcThe output of a Java compiler(javac) is \u25fcnot executable code ; rather, it is bytecode \u25fcBytecode is a highly optimized set of instructions \u25fcdesigned to be executed by the Java run-time system, Java Virtual Machine (JVM )",
+        "page": 14
+    },
+    {
+        "text": "Java Virtual Machine(JVM)",
+        "page": 15
+    },
+    {
+        "text": "16A Picture is Worth\u2026 The Interpreter's are sometimes referred to as Java Virtual MachinesThe output of the compiler is .class file",
+        "page": 16
+    },
+    {
+        "text": "Java Compilers and the JVM \u2022Java compilers do not generate machine code for a CPU. \u2022Java compilers generate machine code for the JVM (Java Virtual Machine). \u2022The JVM machine code (called bytecode ) is executed by a JVM interpreter program on each computer. Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 17
+    },
+    {
+        "text": "Just \u2013in-time Compiler(JIT) \u25fcWhen JIT is part of JVM \u25fcSelected portions of bytecode are compiled into executable code at run time \u25fcOn a piece -by-piece, demand basis \u25fcIt does not compile an entire java program \u25fcFurthermore, not all sequences of bytecode are compiled \u25fconly those that will benefit from compilation",
+        "page": 18
+    },
+    {
+        "text": "Java Runtime Environment (JRE) \u2022a set of programming tools for developing Java applications: \u2022 Java Virtual Machine (JVM), \u2022core classes ( libraries), \u2022supporting files.",
+        "page": 19
+    },
+    {
+        "text": "Java Development Kit(JDK)",
+        "page": 20
+    },
+    {
+        "text": "Progress Check \u2022What is an applet? \u2022What is a Java bytecode? \u2022Which two internet programming problems can be solved using bytecode?",
+        "page": 21
+    },
+    {
+        "text": "The Java Development Kit (JDK) \u2022To compile and run java programs JDK must be installed in the m/c, which can be downloaded using the below link \u2022www.oracle.com/technetwork/java/javase/downloads/in dex.html \u2022Provide two primary programs \u2713Java compiler: javac \u2713Application launcher or java interpreter : java \u2022It runs in the command prompt environment and use command line tools",
+        "page": 22
+    },
+    {
+        "text": "First Simple Java Program /* This is a simple Java program. Call this file Example.java . */ Public class Example { // A Java program begins with a call to main(). public static void main(String[] args) { System.out.println(\"Java drives the Web.\"); } } Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 27
+    },
+    {
+        "text": "\u2022When a class member is preceded by public , then that member may be accessed by code outside the class in which it is declared \u2022The keyword static allows main( ) to be called without having to instantiate a particular instance of the class \u2022The keyword void simply tells the compiler that main( ) does not return a value",
+        "page": 28
+    },
+    {
+        "text": "Progress Check \u2022Where does a Java program begin execution? \u2022What does System.out.println () do \u2022What is the name of the java compiler? What do you use to run java program? \u2022Why main is declared as public? \u2022Why main is declared as static? \u2022If I run a Program in commandline as java Example 1 2 3 what is args [0]? \u2022What is the command to compile java in commandline ? \u2022Name some primitive data types you studied in java. \u2022What is bytecode? What extension of file name it has? \u2022Write a Program to convert 10 gallons to liters .(1Gallon=3.7854l)",
+        "page": 29
+    },
+    {
+        "text": "A Second Example class Example2 { public static void main(String[] args) { int var1; // this declares a variable int var2; // this declares another variable var1 = 1024; // this assigns 1024 to var1 System.out.println(\"var1 contains \" + var1); var2 = var1 / 2; System.out.print(\"var2 contains var1 / 2: \"); System.out.println(var2); } } Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 30
+    },
+    {
+        "text": "A Third Example class Example3 { public static void main(String[] args) { int w; // declare an int variable double x; // declare a floating -point variable w = 10; // assign w the value 10 x = 10.0; // assign x the value 10.0 System.out.println(\"Original value of w: \" + w); System.out.println(\"Original value of x: \" + x); System.out.println(); // print a blank line // now, divide both by 4 w = w / 4; x = x / 4; System.out.println(\"w after division: \" + w); System.out.println(\"x after division: \" + x); } } Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 31
+    },
+    {
+        "text": "Converting Gallons to Liters class GalToLit { public static void main(String[] args) { double gallons; // holds the number of gallons double liters; // holds conversion to liters gallons = 10; // start with 10 gallons liters = gallons * 3.7854; // convert to liters System.out.println(gallons + \" gallons is \" + liters + \" liters.\"); } } Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 32
+    },
+    {
+        "text": "The if Statement \u2022Simplest form: if ( condition ) statement ; \u2022Example: if(3 < 4) System.out.println (\"yes\"); \u2022Relational operators: <, >, <=, >=, ==, != Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 33
+    },
+    {
+        "text": "Example of if Statements class IfDemo { public static void main(String[] args) { int a, b; a = 2; b = 3; if(a < b) System.out.println(\"a is less than b\"); // this won't display anything if(a == b) System.out.println(\"you won't see this\"); } } Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 34
+    },
+    {
+        "text": "Example: if(w < h) { v = w*h; w = 0; } Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved. Code Block \u2022A code block in Java (and many other programming languages) is a set of one or more statements enclosed within curly braces {}. It groups multiple statements together so they can be treated as a single unit, typically used with control structures like if, for, while, methods, or classes . \u2022All statements inside the code block are enclosed within an opening { and a closing } brace . The braces define the boundaries of the block . \u2022Unlike individual statements, a code block itself does not need to end with a semicolon (;). Each statement inside the block, however, must follow Java's syntax rules (e.g., statements must end with a semicolon) .",
+        "page": 35
+    },
+    {
+        "text": "Comments in Java \u2022Java supports single line and multi -line comments very similar to C++ . Example 1 //This is an example of single line comment Example 2 /*This is my first java program . This will print 'Hello World\u2018 as the output */",
+        "page": 36
+    },
+    {
+        "text": "Indentation Practices \u2022The Java compiler doesn\u2019t care about indentation. \u2022Use indentation to make your code more readable. \u2022Indent one level for each opening brace and \u2022move back out after each closing brace. Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 37
+    },
+    {
+        "text": "Progress Check \u2022How is a block of code created? What does it do? \u2022In Java statements are terminated by a ____ \u2022All Java statements must start and end on one line. T/F",
+        "page": 38
+    },
+    {
+        "text": "Java Keywords abstract asset boolean break byte case catch char class const continue default do double else enum extends final finally float for goto if implements import instanceof int interface long native new package private protected public return short static strictfp super switch synchronized this throw throws transient try void volatile while const and goto are reserved but not used.",
+        "page": 39
+    },
+    {
+        "text": "Java Identifiers \u2022An identifier is a name given to \u2022a method, variable, class or other user -defined item . \u2022Identifiers are one or more characters long . \u2022The dollar sign( $), the underscore( -), any letter of the alphabet( a-z,A-Z), and any digit( 0-9) can be used in identifiers . \u2022Should not be a keyword or reserved word Copyright \u00a9 2013 by The McGraw -Hill Companies, Inc. All rights reserved.",
+        "page": 40
+    },
+    {
+        "text": "Java Identifiers \u2022The first character in an identifier cannot be a digit . \u2022 e.g. 12a is an invalid identifier \u2022Java is case sensitive : Upper case and lower case are different . \u2022 myvar and MyVar are different identifiers . \u2022Legal identifiers \u2022Test , x, y2, maxLoad , sample 34, $up, _top",
+        "page": 41
+    },
+    {
+        "text": "Java class Libraries \u2022A package which gets imported automatically to all the java programs \u2022\u2018java.lang \u2019 \u2022java.lang\u2019 package has \u2022many built -in classes and methods ( System and String classes) and \u2022println and print methods . \u2022 Different packages for \u2022I/O , Applets , GUI, Event handling, networking, multithreading, exception handling etc .",
+        "page": 42
+    },
+    {
+        "text": "Exercises \u2022Which of the following variable names is invalid? \u2022A. count \u2022B. $count \u2022C. count27 \u2022D. 67count \u2022 What is wrong with each of the following commands \u2022javac Example.class \u2022Java Example.class",
+        "page": 43
+    },
+    {
+        "text": "Exercises \u2022Assume x is a variable that is declared as type int. What is wrong with each of the following statements? \u2022A. x=3.5; \u2022B. if(x=3) x=4; \u2022C. x= \u201c34\u201d",
+        "page": 44
+    }
+]

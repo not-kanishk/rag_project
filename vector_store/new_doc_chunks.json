@@ -1,0 +1,134 @@
+[
+    {
+        "text": "S t r u c t u r e d P r o g r a m m i n g -f u n c t i o n s M o d u l a r p r o g r a m m i n g a n d F u n c t i o n s L 2 2 -L 2 3",
+        "page": 1
+    },
+    {
+        "text": "Objectives: Tolearn andappreciate thefollowing concepts \u2022Tounderstand scope ofvariables \u2022Modularization andimportance ofmodularization \u2022Understand how todefine andinvoke afunction \u2022Understand theflowofcontrol inaprogram involving function call \u2022Understand thedifferent categories offunctions \u2022Write programs using functions 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 2",
+        "page": 2
+    },
+    {
+        "text": "Session outcome: At the end of session one will be able to \u2022Understand modularization and function \u2022Write simple programs using functions 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 3",
+        "page": 3
+    },
+    {
+        "text": "Programming Scenario . . . Lengthier programs \u2022Prone to errors \u2022tedious to locate and correct the errors To overcome this Programs broken into a number of smaller logical components, each of which serves a specific task. 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 4",
+        "page": 4
+    },
+    {
+        "text": "Modularization Process of splitting the lengthier and complex programs into a number of smaller units is called Modularization . Programming with such an approach is called Modular programming 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 5",
+        "page": 5
+    },
+    {
+        "text": "Advantages of modularization \u2022Reusability \u2022Debugging is easier \u2022Build library \u2022Makes programs easier to understand 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 6",
+        "page": 6
+    },
+    {
+        "text": "Functions A function is a set of instructions to carryout a particular task. Using functions we can structure our programs in a more modular way. 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 7",
+        "page": 7
+    },
+    {
+        "text": "Functions Standard functions (library functions or built in functions) User -defined functions Written by the user(programmer) 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 8",
+        "page": 8
+    },
+    {
+        "text": "General form of function definition return_type function_name (parameter_definition ) { variable declaration; statement1; statement2; . . . return (value_computed ); } 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 9",
+        "page": 9
+    },
+    {
+        "text": "Defining a Function \u2713Name (function name ) \u2022You should give functions descriptive names \u2022Same rules as variable names, generally \u2713Return type \u2022Data type of the value returned to the part of the program that activated (called) the function . \u2713Parameter list (parameter_definition ) \u2022A list of variables that hold the values being passed to the function \u2713Body \u2022Statements enclosed in curly braces that perform the function\u2019s operations(tasks) 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 10",
+        "page": 10
+    },
+    {
+        "text": "Understanding main( ) function 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 11int main ( void ) { printf (\u201chello world \\n\u201d); return 0; }Return type Function nameParameter List Body}",
+        "page": 11
+    },
+    {
+        "text": "int main() { printf (\u201cHello from main \\n\u201d); DisplayMessage (); // FUNCTION CALL printf (\u201cBack in function main again. \\n\u201d); return 0; }Function Definition and Call 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 12void DisplayMessage (void) { printf (\u201cHello from function DisplayMessage \\n\u201d); }// FUNCTION DEFINITION Return type Function name Parameter List",
+        "page": 12
+    },
+    {
+        "text": "Multiple Functions - An example 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 13void First (void){ printf (\u201cI am now inside function First \\n\u201d); } void Second (void){ printf ( \u201cI am now inside function Second \\n\u201d); First(); printf (\u201cBack to Second \\n\u201d); } int main (){ printf ( \u201cI am starting in function main \\n\u201d); First (); printf ( \u201cBack to main function \\n\u201d); Second (); printf ( \u201cBack to main function \\n\u201d); return 0; }// FUNCTION DEFINITION // FUNCTION DEFINITION // FUNCTION CALL // FUNCTION CALL// FUNCTION CALL",
+        "page": 13
+    },
+    {
+        "text": "Arguments and Parameters \u27a2Both arguments and parameters are variables used in a program & function . \u27a2Variables used in the function reference or function call are called as arguments . These are written within the parenthesis followed by the name of the function . They are also called actual parameters . \u27a2Variables used in function definition are called parameters , They are also referred to as formal parameters . 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 14",
+        "page": 14
+    },
+    {
+        "text": "Functions 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 202215void dispChar (int n, char c ) { printf (\" You have entered %d & %c\u201c, n,c); } int main(){ //calling program int no; char ch; printf (\u201cEnter a number & a character: \\n\u201c); scanf (\u201c%d %c\u201d,&no,& ch); dispChar ( no, ch); //Function reference return 0; }Formal parameters Actual parameters",
+        "page": 15
+    },
+    {
+        "text": "Function Prototypes \u25aaMust be included for each function that will be defined, (required by Standards for C++ but optional for C) if not directly defined before main() . \u25aaIn most cases it is recommended to include a function prototype in your C/C++ program to avoid ambiguity . \u25aaIdentical to the function header , with semicolon (;) added at the end. \u2022Function prototype (declaration) includes \u2022Function name \u2022Parameters \u2013 what the function takes in and their type \u2022Return type \u2013 data type function returns (default int) \u2022Parameter names are Optional . 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 16",
+        "page": 16
+    },
+    {
+        "text": "Function Prototypes \u25aaFunction prototype provides the compiler the name and arguments of the functions and must appear before the function is used or defined . \u25aaIt is a model for a function that will appear later, somewhere in the program . \u25aaGeneral form of the function prototype : fn_return_type fn_name (type par1, type par2, \u2026, type parN ); \u2022Example : int maximum( int, int, int ); \u2022Takes in 3 ints \u2022Returns an int 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 17",
+        "page": 17
+    },
+    {
+        "text": "Scope of Variables \u2022A scope is a region of the program where a defined variable can have its existence and beyond that it cannot be accessed . \u2022The two types of variables are 1) local variables 2) global variables 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 18",
+        "page": 18
+    },
+    {
+        "text": "Local Variables \u2022Variables that are declared inside a function are called local variables . \u2022They can be used only by statements that are inside that function . \u2022In the following example all the variables a, b, and c are local to main() function . 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 19#include <stdio.h > int main () { /* local variable declaration */ int a, b, c; a = 10; b = 20; c = a + b; printf (\"value of a = %d, b = %d and c = %d \\n\", a, b, c); return 0; }",
+        "page": 19
+    },
+    {
+        "text": "Global Variables \u2022Global variables are defined outside a function, usually on top of the program . \u2022Global variables hold their values throughout the lifetime of your program and they can be accessed inside any of the functions defined for the program . 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 20#include <stdio.h > int g; /* global variable declaration */ int main () { int a, b; /* local variable declaration */ a = 10; b = 20; g = a + b; printf (\"value of a = %d, b = %d and g = %d \\n\", a, b, g); return 0; }",
+        "page": 20
+    },
+    {
+        "text": "Functions - points to note 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 211.The parameter list must be separated by commas . dispChar ( int n, char c); 2.The parameter names do not need to be the same in the prototype declaration and the function definition . 3.The types must match the types of parameters in the function definition, in number and order . void dispChar (int n, char c); //proto -type void dispChar (int num, char ch){ printf (\" You have entered %d &%c\u201d, num,ch ); } 4.Use of parameter names in the declaration(prototype) is optional but parameter type is a must . void dispChar (int , char); //proto -type",
+        "page": 21
+    },
+    {
+        "text": "Functions - points to note 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 225.If the function has no formal parameters, the list can be written as (void) or simply () 6.The return type is optional, when the function returns integer type data . 7.The return type must be void if no value is returned . 8.When the declared types do not match with the types in the function definition, compiler will produce error .",
+        "page": 22
+    },
+    {
+        "text": "Functions - Categories 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 23Categorization based on the arguments and return values 1.Functions with no arguments and no return values . 2.Functions with arguments and no return values . 3.Functions with arguments and one return value . 4.Functions with no arguments but return a value . 5.Functions that return multiple values (will see later with parameter passing techniques) .",
+        "page": 23
+    },
+    {
+        "text": "Function with No Arguments/parameters & No return values 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 24void dispPattern (void); // prototype int main(){ printf (\u201cfn to display a line of stars \\n\u201d); dispPattern (); return 0; } void dispPattern (void ){ int i; for (i=1;i<=20 ; i++) printf ( \u201c*\u201d); }",
+        "page": 24
+    },
+    {
+        "text": "Function with No Arguments but A return value 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 25int readNum (void); // prototype int main(){ int c; printf (\u201cEnter a number \\n\u201d); c=readNum (); printf (\u201cThe number read is % d\u201c,c); return 0; } int readNum (){ int z; scanf (\u201c%d\u201d,&z ); return(z); }",
+        "page": 25
+    },
+    {
+        "text": "Fn with Arguments/parameters & No return values 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 26void dispPattern (char ch); // prototype int main(){ printf (\u201cfn to display a line of patterns \\n\u201d); dispPattern (\u2018#\u2019); dispPattern (\u2018*\u2019); dispPattern (\u2018@\u2019); return 0; } void dispPattern (char ch ){ int i; for ( i=1;i<=20 ; i++) printf (\u201c%c\u201d, ch); }",
+        "page": 26
+    },
+    {
+        "text": "Function with Arguments/parameters & One return value 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 27int main(){ int a,b,c ; printf (\u201c\\nEnter numbers to be added \\n\u201d); scanf (\u201c%d % d\u201d,&a,&b ); c=fnAdd (a,b); printf (\u201cSum is %d \u201c, c); return 0; } int fnAdd (int x, int y ){ int z; z=x+y; return(z); }",
+        "page": 27
+    },
+    {
+        "text": "Problems\u2026 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 28Write appropriate functions to 1.Find the factorial of a number \u2018n\u2019. 2.Reverse a number \u2018n\u2019. 3.Check whether the number \u2018n\u2019 is a palindrome . 4.Generate the Fibonacci series for given limit \u2018n\u2019. 5.Check whether the number \u2018n\u2019 is prime . 6.Generate the prime series using the function written for prime check, for a given limit .",
+        "page": 28
+    },
+    {
+        "text": "Factorial of a given number \u2018n\u2019 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 29long factFn (int); //prototype int main() { int n, f; printf (\"Enter a number :\u201c); scanf (\u201c%d\u201d,&n ); f =factFn (n); printf (\u201cFact= % ld\u201c,f); return 0; }//function definition long factFn (int num ) { int i; long fact=1; //factorial computation for ( i=1; i<=num; i++) fact=fact * i; // return the result return (fact); }",
+        "page": 29
+    },
+    {
+        "text": "Reversing a given number \u2018n\u2019 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 30int Reverse( int); //prototype int main() { int n,r; printf (\"Enter a number : \\n\u201c); scanf (\u201c%d\u201d, &n); r= Reverse(n); printf (\u201c reversed no=% d\u201c,r) return 0; }int Reverse( int num) { int rev=0; int digit; while( num !=0) { digit = num % 10; rev = (10 * rev) + digit; num = num/10; } return (rev); }",
+        "page": 30
+    },
+    {
+        "text": "Check whether given number is prime or not 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 31int IsPrime (int); //prototype int main() { int n; printf (\u201cEnter a number : \u201c); scanf (\u201c%d\u201d,&n ); if (IsPrime (n)) Printf (\u201c%d is a prime no\u201d,n ); else Printf (\u201c%d is not a prime no\u201d,n ); return 0; }int IsPrime (int num) //prime check { int p=1; for(int j=2;j<=num/2;j++) // change { if(num%j ==0) { p=0; break; } } return p; }",
+        "page": 31
+    },
+    {
+        "text": "First n Fibonacci number generation 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 32void fibFn (int); //prototype int main() { int n; printf (\"Enter the limit \u201d); scanf (\u201c%d\u201d,&n ); fibFn (n); //function call return 0; }void fibFn (int lim) { //fib generation int i, first, sec, next; if (lim<=0) printf (\"limit should be + ve.\\n\u201c); else { printf (\"\\nFibonacci nos\\n\u201c); first = 0, sec = 1; for ( i=1; i<=lim; i++) { printf (\u201c%d\u201d, first) next = first + sec; first = sec; sec = next; } } }",
+        "page": 32
+    },
+    {
+        "text": "Summary \u2022Modularization and importance of modularization \u2022Defining and invoking a function \u2022Flow of control of a program involving function call \u2022Different categories of functions \u2022Simple programs using functions 26/11/2024 CSE 1071 Problem Solving using Computers (PSUC) - 2022 33",
+        "page": 33
+    }
+]
