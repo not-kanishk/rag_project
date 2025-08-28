@@ -39,15 +39,17 @@ pip install PyPDF2 sentence-transformers streamlit ollama numpy
 ollama run llama3
 streamlit run app.py (in seperate terminal)
 
+```
+
 ## 💡 How to Use
 
-1. **Upload a PDF**  
+- **Upload a PDF**  
    Use the sidebar file uploader. The app will process the file and store embeddings locally.
 
-2. **Ask Questions**  
+- **Ask Questions**  
    Type your question in the chat input box.  
 
-3. **Get Answers**  
+- **Get Answers**  
    Receive concise responses **with citations (page numbers) + raw evidence** from the PDF.  
 
 
