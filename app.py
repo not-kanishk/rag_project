@@ -13,6 +13,7 @@ from vector_store.store import save_chunks, load_chunks
 from retriever.retriever import retrieve
 from generator.generator import answer
 from sentence_transformers import util
+from pipeline import embed_and_store
 
 # --- Session State Management ---
 if "messages" not in st.session_state:
@@ -48,7 +49,7 @@ with col1:
                 st.session_state.chunks_with_metadata = load_chunks(chunks_path)
             else:
                 st.info("Embedding new document and saving to vector store...")
-                
+
                 temp_dir = "temp_pdf"
                 os.makedirs(temp_dir, exist_ok=True)
                 temp_path = os.path.join(temp_dir, uploaded_file.name)
@@ -62,16 +63,19 @@ with col1:
                         text = page.extract_text()
                         text_with_metadata.append({"text": text, "page": page_num})
                     return text_with_metadata
-                
+
                 text_with_metadata = extract_text(temp_path)
                 chunks_with_metadata = chunk_text(text_with_metadata)
-                
+
                 st.session_state.embedder = Embedder()
                 chunks_text_only = [chunk['text'] for chunk in chunks_with_metadata]
-                embeddings = st.session_state.embedder.embed_and_store(chunks_text_only, embeddings_path)
+
+                embeddings = embed_and_store(chunks_text_only, st.session_state.embedder, embeddings_path)
+
+                st.session_state.embeddings = embeddings
                 st.session_state.chunks_with_metadata = chunks_with_metadata
                 save_chunks(chunks_with_metadata, chunks_path)
-                
+
                 os.remove(temp_path)
 
         st.success(f"Successfully processed '{uploaded_file.name}'")
@@ -79,18 +83,22 @@ with col1:
 
 with col2:
     # User input for the question
+    # This input is now disabled until a document is processed
     prompt = st.chat_input("Ask a question about the document:", disabled=not st.session_state.embedder)
-    
+
     # Process user input and generate a response
     if prompt:
         st.session_state.messages.append({"role": "user", "content": prompt})
-        
-        # Generate a response
-        with st.spinner("Generating answer..."):
-            retrieved_items = retrieve(prompt, st.session_state.embedder, st.session_state.embeddings, st.session_state.chunks_with_metadata)
-            response = answer(prompt, retrieved_items)
 
-        st.session_state.messages.append({"role": "assistant", "content": response})
+        # Generate a response ONLY if the embedder is ready
+        if st.session_state.embedder:
+            with st.spinner("Generating answer..."):
+                retrieved_items = retrieve(prompt, st.session_state.embedder, st.session_state.embeddings, st.session_state.chunks_with_metadata)
+                response = answer(prompt, retrieved_items)
+
+            st.session_state.messages.append({"role": "assistant", "content": response})
+        else:
+            st.session_state.messages.append({"role": "assistant", "content": "Please upload a PDF first."})
 
     # Display chat messages from session state
     for message in st.session_state.messages:
