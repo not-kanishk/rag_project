@@ -1,4 +1,5 @@
 import ollama
+import requests
 
 def answer(query, retrieved_items):
     # Format the prompt with the retrieved chunks and their page numbers
@@ -11,20 +12,25 @@ def answer(query, retrieved_items):
 
     # Use the local LLM to generate an answer
     try:
-        response = ollama.chat(model='llama3', messages=[{'role': 'user', 'content': prompt}])
+        # Removed the 'timeout' and 'options' arguments for better compatibility
+        response = ollama.chat(
+            model='llama3',
+            messages=[{'role': 'user', 'content': prompt}]
+        )
         generated_answer = response['message']['content']
-        
+
         # Now, return the full answer with evidence
         response_text = f"**Generated Answer:**\n{generated_answer}\n"
-        
+
         # Add the supporting evidence to the response string
         response_text += "\n**Supporting Evidence:**\n"
         for item in retrieved_items:
             response_text += f"\n- Page {item['page']}: {item['text']}"
-        
+
         return response_text
-    
-    except ollama.OllamaConnectionError:
-        return "**Error:** Ollama server is not running. Please ensure Ollama is active."
+
+    # Catch the specific connection error from the requests library
+    except requests.exceptions.ConnectionError:
+        return "**Error:** Could not connect to the Ollama server. Please ensure Ollama is running and the `llama3` model is loaded."
     except Exception as e:
-        return f"**An error occurred:** {e}"
+        return f"**An unexpected error occurred:** {e}"
